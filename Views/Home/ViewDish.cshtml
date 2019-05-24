@@ -1,0 +1,9 @@
+﻿<a href="/">Home</a>
+<h1>@ViewBag.ThisDish.Name</h1>
+<h4>@ViewBag.ThisDish.Chef</h4>
+<hr>
+<p>@ViewBag.ThisDish.Description</p>
+<p><span>Calories: </span>@ViewBag.ThisDish.Calories</p>
+<p><span>Tastiness: </span>@ViewBag.ThisDish.Tastiness</p>
+<a class="btn red" href="/delete/@ViewBag.ThisDish.DishId">Delete</a>
+<a class="btn reg" href="/edit/@ViewBag.ThisDish.DishId">Edit</a>

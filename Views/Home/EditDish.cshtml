@@ -1,0 +1,36 @@
+﻿<a href="/">Home</a>
+@model Dish
+<h4>@ViewBag.ThisDish.Name</h4>
+<form asp-action="Update" asp-controller="Home" method="POST">
+    <div class="row">
+        <label asp-for="Chef"></label>
+        <input asp-for="Chef" value="@ViewBag.ThisDish.Chef" required>
+    </div>
+    <div class="row">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@ViewBag.ThisDish.Name" required>
+    </div>
+    <div class="row">
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" value="@ViewBag.ThisDish.Calories" min="0" required>
+    </div>
+    <div class="row">
+        <label asp-for="Tastiness"></label>
+        <select asp-for="Tastiness">
+            <option selected="selected" value="@ViewBag.ThisDish.Tastiness">@ViewBag.ThisDish.Tastiness</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="row">
+        <label asp-for="Description"></label>
+        <textarea name="Description" required>@ViewBag.ThisDish.Description</textarea>
+    </div>
+    <div class="row">
+        <input value="Edit Dish" type="submit">
+    </div>
+    <input asp-for="DishId" type="hidden" value="@ViewBag.ThisDish.DishId">
+</form>
